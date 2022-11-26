@@ -1,6 +1,5 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const morgan = require("morgan");
 // mongoose connect files
 const connectDB = require("./config/db");
 // route files
@@ -16,9 +15,6 @@ const app = express();
 
 // Use middleware
 app.use(express.json());
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
 
 // Routes
 app.use("/api/v1/bootcamps/", bootcampsRoute);
